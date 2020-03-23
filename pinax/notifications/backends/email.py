@@ -41,4 +41,4 @@ class EmailBackend(BaseBackend):
         })
         body = render_to_string("pinax/notifications/email_body.txt", context)
 
-        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [recipient.email])
+        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [recipient.email], html_message=body)
